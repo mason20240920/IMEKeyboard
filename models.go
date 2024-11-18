@@ -377,6 +377,44 @@ func (model *KeyboardRealConfigModel) QwertyQXAxios(keyboardType KeyboardBrandTy
 	return ret
 }
 
+func (model *KeyboardRealConfigModel) LogoPressXAxios(keyboardType KeyboardBrandType) int64 {
+	var ret int64 = 0
+	switch keyboardType {
+	case SogouBrand:
+		ret = int64(model.BrandDetailModel.Width - model.BrandDetailModel.Sogou.DownArrowWidth/2)
+	case BaiduBrand:
+		ret = int64(model.BrandDetailModel.Width - model.BrandDetailModel.Baidu.DownArrowWidth/2)
+	case HWBaiduBrand:
+		ret = int64(model.BrandDetailModel.Width - model.BrandDetailModel.HWBaidu.DownArrowWidth/2)
+	case WeChatBrand:
+		ret = int64(model.BrandDetailModel.Width - model.BrandDetailModel.WeChat.DownArrowWidth/2)
+	case IflytekBrand:
+		ret = int64(model.BrandDetailModel.Width - model.BrandDetailModel.Iflytek.DownArrowWidth/2)
+	case GBoardBrand:
+		ret = int64(model.BrandDetailModel.Width - model.BrandDetailModel.GBoard.DownArrowWidth/2)
+	}
+	return ret
+}
+
+func (model *KeyboardRealConfigModel) LogoPressYAxios(keyboardType KeyboardBrandType) int64 {
+	var ret int64 = 0
+	switch keyboardType {
+	case SogouBrand:
+		ret = int64(model.SogouStartY + model.BrandDetailModel.Sogou.LogoHeight/2)
+	case BaiduBrand:
+		ret = int64(model.BaiduStartY + model.BrandDetailModel.Baidu.LogoHeight/2)
+	case HWBaiduBrand:
+		ret = int64(model.HWBaiduStartY + model.BrandDetailModel.HWBaidu.LogoHeight/2)
+	case WeChatBrand:
+		ret = int64(model.WeChatStartY + model.BrandDetailModel.WeChat.LogoHeight/2)
+	case IflytekBrand:
+		ret = int64(model.IflytekStartY + model.BrandDetailModel.Iflytek.LogoHeight/2)
+	case GBoardBrand:
+		ret = int64(model.GBoardStartY + model.BrandDetailModel.GBoard.LogoHeight/2)
+	}
+	return ret
+}
+
 // QwertyQYAxios Get the Q keyboard y axios
 func (model *KeyboardRealConfigModel) QwertyQYAxios(keyboardType KeyboardBrandType) int64 {
 	var ret int64 = 0

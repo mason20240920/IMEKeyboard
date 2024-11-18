@@ -432,6 +432,13 @@ func (model *KeyboardPos) KeyboardLastWord() *KeyboardAxiosPos {
 	}
 }
 
+func (model *KeyboardPos) LogoKeyboardAction() *KeyboardAxiosPos {
+	return &KeyboardAxiosPos{
+		X: model.keyboardConfig.LogoPressXAxios(model.keyboardBrandType),
+		Y: model.keyboardConfig.LogoPressYAxios(model.keyboardBrandType),
+	}
+}
+
 // KeyboardSymbolSwitch
 //
 //	@Description: Change the keyboard position
